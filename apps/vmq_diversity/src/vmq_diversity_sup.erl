@@ -142,7 +142,8 @@ start_all_pools([{pgsql, ProviderConfig} | Rest], Acc) ->
             database => Database,
             port => Port,
             ssl => Ssl,
-            ssl_opts => SslOpts
+            ssl_opts => SslOpts,
+            tcp_opts => [inet6]
         },
         epgsql:connect(Hostname, Username, Password, Opts)
     end,
